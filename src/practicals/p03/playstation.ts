@@ -7,9 +7,8 @@ export class Playstation extends Product {
   discount:number = 0;
 
   constructor(name:string,generation:number,price:number){
-    super(name)
+    super(name,price)
     this.generation = generation;
-    this.price = price;
   }
 
   getProfile(){
