@@ -1,7 +1,9 @@
 export class User {
   username: string
   private password: string
-  private static LOGIN_ATTEMPTS: number = 0
+  
+  // 1. เอาคำว่า static ออก
+  private LOGIN_ATTEMPTS: number = 0
 
   constructor(username: string, password: string) {
     this.username = username
@@ -9,7 +11,8 @@ export class User {
   }
 
   login(password: string): boolean {
-    User.LOGIN_ATTEMPTS += 1
+    // 2. เปลี่ยนจาก User. เป็น this.
+    this.LOGIN_ATTEMPTS += 1
     return this.validatePassword(password)
   }
 
@@ -18,6 +21,7 @@ export class User {
   }
 
   getLoginAttempts(): number {
-    return User.LOGIN_ATTEMPTS
+    // 3. เปลี่ยนจาก User. เป็น this.
+    return this.LOGIN_ATTEMPTS
   }
 }
