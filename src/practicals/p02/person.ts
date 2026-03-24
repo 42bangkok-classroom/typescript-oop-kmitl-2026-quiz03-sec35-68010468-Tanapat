@@ -1,10 +1,14 @@
 export class Person {
     firstname:string = '';
     lastname:string = '';
-    age:number = 0;
+    private age:number = 0;
     Fullname:string = '';
     static COUNTRY:string = `Thailand`;
 
+    setA(c:number){
+        this.age = c + 1;
+        return this.age;
+    }
     setAge(x:number){
         this.age =x;
     }
@@ -17,4 +21,3 @@ export class Person {
     }
 
 }
-
